@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  soul-database:
+    image: postgres
+    container_name: soul-database
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=amdrafa
+      - POSTGRES_PASSWORD=rafa123
+      - POSTGRES_DB=soul-database
+    volumes:
+      - pgdata:/data/postgres
+volumes:
+  pgdata:
+    driver: local
